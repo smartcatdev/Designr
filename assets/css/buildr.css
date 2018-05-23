@@ -571,11 +571,11 @@ div#split-social-slide-in {
     padding: 15px;
     transform: translate(100%,0%);
     border-bottom-left-radius: 8px;
-    box-shadow: -3px 3px 10px -5px rgba(0,0,0,.75);
 }
 
 div#split-social-slide-in.slid-in {
     transform: translate(0%,0%);
+    box-shadow: -3px 3px 10px -5px rgba(0,0,0,.75);
 }
 
 #split-social-trigger {
