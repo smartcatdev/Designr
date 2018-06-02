@@ -11,10 +11,10 @@
 
 ?>
 
-	</div><!-- #content -->
+    </div><!-- #content -->
 
-	<?php get_template_part( 'template-parts/footer', 'slim' ); ?>
-
+    <?php get_template_part( 'template-parts/footer', 'slim' ); ?>
+        
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

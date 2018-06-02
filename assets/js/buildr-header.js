@@ -15,7 +15,7 @@ jQuery(document).ready(function ($) {
   
     $('img.custom-logo').addClass('animated');
   
-    $("header#masthead #slim-header-wrap").sticky({
+    $("header#masthead:not(.header-style-vertical) #slim-header-wrap").sticky({
         topSpacing: $('#wpadminbar').length > 0 ? 32 : 0,
         zIndex:9999,
     }).on('sticky-start', function() { 
@@ -74,7 +74,7 @@ jQuery(document).ready(function ($) {
      * Header: Mobile Menu - Submenu Expansion / Contraction
      * ---------------------------------------------------------------------- */
 
-    $( '#mobile-menu-wrap ul#mobile-menu > li.menu-item-has-children').prepend('<span style="font-family: Helvetica;">+</span>');
+    $( '#mobile-menu-wrap ul#mobile-menu > li.menu-item-has-children').prepend('<span style="font-family: Helvetica !important;">+</span>');
     $( "#mobile-menu-wrap ul#mobile-menu > li.menu-item-has-children > span" ).on( 'click', function() {
         
         $(this).stop().toggleClass('expanded').parent().find('ul.sub-menu').stop().slideToggle();

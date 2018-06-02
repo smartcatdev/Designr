@@ -10,6 +10,7 @@
     }
 }
 
+body.admin-bar header#masthead.header-style-vertical,
 body.admin-bar #cart-panel {
     top: 32px !important;
 }
@@ -19,6 +20,7 @@ body.admin-bar div#cart-panel-trigger {
 }
 
 @media (max-width:782px) {
+    body.admin-bar header#masthead.header-style-vertical,
     body.admin-bar #cart-panel {
         top: 46px !important;
     }                        
@@ -230,6 +232,7 @@ header img.custom-logo {
 }
 
 ul#mobile-menu li a,
+ul.vertical-header-menu li a,
 ul.slim-header-menu > li a {
     color: #fff;
     text-transform: uppercase;
@@ -269,7 +272,8 @@ ul.slim-header-menu > li:not(.menu-item-has-children) > a:hover:before {
 }
 
 div#slim-header ul#mobile-menu,
-div#banner-header ul#mobile-menu {
+div#banner-header ul#mobile-menu,
+#vertical-header-wrap ul#mobile-menu {
     padding: 15px 0 0 0;
     margin: 0;
     list-style: none;
@@ -280,7 +284,8 @@ div#banner-header ul#mobile-menu {
 }
 
 div#slim-header ul#mobile-menu:before,
-div#banner-header ul#mobile-menu:before {
+div#banner-header ul#mobile-menu:before,
+#vertical-header-wrap ul#mobile-menu:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -289,14 +294,14 @@ div#banner-header ul#mobile-menu:before {
     top: 0;
     left: 0;
     margin: 0;
-/*    background-color: #e5f075;*/
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
 }
 
 div#slim-header ul#mobile-menu.expanded:before,
-div#banner-header ul#mobile-menu.expanded:before {
+div#banner-header ul#mobile-menu.expanded:before,
+#vertical-header-wrap ul#mobile-menu.expanded:before {
     visibility: visible;
     opacity: 1;
     -webkit-transform: scaleX(1);
@@ -304,7 +309,8 @@ div#banner-header ul#mobile-menu.expanded:before {
 }
 
 div#slim-header ul#mobile-menu li,
-div#banner-header ul#mobile-menu li {
+div#banner-header ul#mobile-menu li,
+#vertical-header-wrap ul#mobile-menu li {
     opacity: 0;
 }
 
@@ -648,6 +654,7 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
 /* -----------------------------------------------------------------------------
  * Hamburger Menu - Cross Animation
  * -------------------------------------------------------------------------- */
+#vertical-menu-toggle,
 #mobile-menu-trigger {
     position: relative;
     top: 0;
@@ -661,6 +668,9 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
     padding-bottom: 15px;
 }
 
+#vertical-menu-toggle .bar,
+#vertical-menu-toggle .bar:after,
+#vertical-menu-toggle .bar:before,
 #mobile-menu-trigger .bar,
 #mobile-menu-trigger .bar:after,
 #mobile-menu-trigger .bar:before {
@@ -668,16 +678,19 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
   height: 2px;
 }
 
+#vertical-menu-toggle .bar,
 #mobile-menu-trigger .bar {
   position: relative;
   transform: translateY(9px);
   background: white;
   transition: all 0ms 300ms;
 }
+#vertical-menu-toggle .bar.animate,
 #mobile-menu-trigger .bar.animate {
   background: rgba(255, 255, 255, 0);
 }
 
+#vertical-menu-toggle .bar:before,
 #mobile-menu-trigger .bar:before {
   content: "";
   position: absolute;
@@ -687,6 +700,7 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
   transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+#vertical-menu-toggle .bar:after,
 #mobile-menu-trigger .bar:after {
   content: "";
   position: absolute;
@@ -696,12 +710,14 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
   transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+#vertical-menu-toggle .bar.animate:after,
 #mobile-menu-trigger .bar.animate:after {
   top: 0;
   transform: rotate(45deg);
   transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+#vertical-menu-toggle .bar.animate:before,
 #mobile-menu-trigger .bar.animate:before {
   bottom: 0;
   transform: rotate(-45deg);
@@ -1229,6 +1245,12 @@ footer div#footer-branding-wrap .site-title {
 
 footer div#footer-branding-wrap img.custom-logo {
     width: auto;
+}
+
+div#footer-branding-wrap svg {
+    width: 65px;
+    margin-bottom: -2px;
+    margin-left: 4px;
 }
 
 footer #buildr_designer {

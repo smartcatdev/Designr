@@ -124,11 +124,10 @@ function buildr_wp_head_styles() { ?>
         .buildr-pagination-links .page-numbers:hover,
         nav.navigation.post-navigation .nav-links a:hover,
         #wpadminbar .buildr-toolbar-link a.ab-item,
-        #wpadminbar .buildr-toolbar-link a.ab-item:hover{
+        #wpadminbar .buildr-toolbar-link a.ab-item:hover {
             background-color: <?php echo esc_attr( $theme_colors['primary'] ); ?>;
         }
-        
-            
+           
         <?php if( 
                 get_theme_mod( BUILDR_OPTIONS::NAVBAR_FINAL_LINK_FILL, BUILDR_DEFAULTS::NAVBAR_FINAL_LINK_FILL ) 
                 && get_theme_mod( BUILDR_OPTIONS::NAVBAR_FINAL_LINK_ACCENT, BUILDR_DEFAULTS::NAVBAR_FINAL_LINK_ACCENT ) 
@@ -305,6 +304,14 @@ function buildr_wp_head_styles() { ?>
         div#slim-footer,
         div#slim-footer a {
             color: <?php echo esc_attr( $theme_colors['footer_fg'] ); ?>;
+        }
+        
+        footer span.buildr_by {
+            border-color: <?php echo esc_attr( $theme_colors['footer_fg'] ); ?> !important;
+        }
+        
+        #footer-branding-wrap svg path {
+            fill: <?php echo esc_attr( $theme_colors['footer_fg'] ); ?>;
         }
         
         /* ----- Slide-in Cart Tab ------------------------------------------ */

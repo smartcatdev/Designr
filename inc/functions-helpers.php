@@ -334,3 +334,14 @@ function buildr_is_single_sidebar_active( $template = 'page' ) {
     
 }
     
+function buildr_is_child( $theme_name ) {
+    
+    $current_theme = wp_get_theme();
+    
+    if ( !empty( $theme_name) ) {
+        return is_child_theme() && $current_theme->get( 'Name' ) == $theme_name;
+    } else {
+        return false;
+    }
+    
+}
